@@ -1,0 +1,40 @@
+//Made by yours truly, Cloxaau! :D
+
+//Feel free to use this.
+
+import java.util.Scanner; //Calls the scanner.
+ 
+public class Primifier { //Defines the class.
+    public static void main(String[] args) { //Defines the main method.
+      
+        System.out.println("Enter a positive integer to be primified: "); //Prints text.
+        
+        Scanner input = new Scanner (System.in); //Defines the scanner.
+        
+        int num = input.nextInt(); //Creates the number variable; defined by user.
+        int exp; // Creates the exponent variable.
+        int cnt = 0; //Creates the count variable; used to decide whether to place an X.
+        
+        System.out.println("Your primified quantity is: "); //Prints text.
+        for (int i = 2; i <= num; i++) { //////////////////////////////////////////////
+        	exp = 0;                                                                   //
+            while (num % i == 0) {                                                   //
+                num /= i;                                                            //
+                exp++;                                                               //
+            }                                                                        //
+                                                                                     //
+            if (exp == 0) continue; //Helps decide whether to print the exponent.    //
+                                                                                     //
+            if (exp == 1 && cnt == 0) { //*************** Used for deciding          //
+            	System.out.print(i);                     // how to print the           //
+            } else if (exp == 1 && cnt >= 1) {         // primified form             //
+            	System.out.print("*" + i);               // of the original            //
+            } else if (exp != 1 && cnt == 0) {         // number.                    //
+            	System.out.print(i + "^" + exp);         //*******************         //
+            } else if (exp != 1 && cnt >= 1) {         //                            //
+            	System.out.print("*" + i + "^" + exp); //                              //
+            } cnt++; ////////////////////////////////////                            //
+            input.close();                                                           //
+        } ////////////////////*****For and while loop to gather the prime factors./////
+    }
+}
